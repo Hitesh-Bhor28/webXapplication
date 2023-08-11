@@ -6,6 +6,69 @@
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
+
+#preloader{
+  /* background: rgb(255, 255, 255) url(../img/loader.gif) no-repeat center center; */
+  background: rgb(0, 0, 0) url(Images/loader.gif) no-repeat center center;
+  background-size: 25%;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+}
+
+.message{ 
+  width: 100%;
+  position: relative;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+#success{
+  font-size: 20px;
+  color: green;
+  position: absolute;
+  animation: buttons .3s linear;
+  display: none;
+}
+
+#danger{
+  font-size: 20px;
+  color: red;
+  position: absolute;
+  transition: .3s;
+  animation: buttons .3s linear;
+  display: none;
+}
+
+@keyframes buttons{
+    0%{
+      transform: scale(0.1);
+    }
+
+    50%{
+      transform: scale(0.5);
+    }
+
+    100%{
+      transform: scale(1);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 body{
   min-height: 100vh;
   display: flex;
@@ -13,12 +76,12 @@ body{
   justify-content: center;
   /* -------------------------------***************************************-------------- */
   /* background: url("https://source.unsplash.com/random/?food blur") center center/cover;  */
-  background: url("Images/login-bg2.jpg") center center/cover; 
+  background: url("https://source.unsplash.com/random/?food blur") center center/cover; 
   padding: 30px;
   background-blend-mode: darken;
 }
 .container{
-  position: relative;
+  position: absolute;
   max-width: 850px;
   width: 100%;
   background: #fff;
@@ -72,7 +135,6 @@ body{
   position: absolute;
   height: 100%;
   width: 100%;
-  object-fit: cover;
   z-index: 10;
 }
 .container .cover .text{

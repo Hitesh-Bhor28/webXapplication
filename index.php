@@ -8,77 +8,81 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/section.css">
     <link rel="stylesheet" href="css/signin.css">
-    <link rel="stylesheet" media="screen and (max-width: 1147px)" href="css/phone.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/phone.css">
+    <link rel="stylesheet" href="css/laptop1.css">
     <!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> -->
     <!-- <script src="js/default_img.js"></script> -->
     
 </head>
 <body>
+
+<div id="preloader"></div>
+    
     <nav id="navbar">
         <div id="logo">
             <img src="img/logoBG.png" alt="logo.png" srcset="">
         </div>
-
+        
         <ul>
-            <li class="nav-text"><a href="#">Home</a></li>
-            <li class="nav-text"><a href="#">Menu</a></li>
+            <li class="nav-text"><a href="http://localhost/FoodDeliveryProject/">Home</a></li>
+            <li class="nav-text"><a href="http://localhost/FoodDeliveryProject/dashboard/dashboard.php">Menu</a></li>
             <li class="nav-text"><a href="#O-form">Order</a></li>
             <li class="nav-text"><a href="#">Contact-Us</a></li>
         </ul>
     </nav>
-
+    
     <section id="home">
-        <h1 id="main-heading">India's First Food Delivery Website</h1>
+        <h1 id="main-heading">India's Best Food Delivery Website</h1>
         <p id="paragraph">Welcome to DelightfulDishes.com! Indulge your taste buds with our exquisite collection of mouthwatering recipes from around the world. From savory starters to delectable desserts, our culinary experts have crafted each dish to perfection. Whether you're a seasoned chef or a cooking novice, our easy-to-follow recipes will inspire and satisfy your cravings. Join our vibrant community of food enthusiasts, share your creations, and discover new flavors to tantalize your senses. Get ready for a delightful gastronomic journey like no other!</p>
         <div id="hide"></div>
         <button id="btn"><a href="#our-service">Order Now</a></button>
         <h1 class="h-primary center" id="our-service">Our Trending items</h1>
     </section>
-
-        <section class="services-container">
-            <div id="services">
-                <div class="box">
-                    <!-- https://source.unsplash.com/random/?Pizza/1080x675" -->
-                    <!-- /img/pizza.jpg -->
-                    <a href="#"><img id="imagep" alt="Pizza" src="img/pizza.jpg"></a>
-                    <a href="#"><h2 class="h-secondary center whiter">PIZZA</h2></a>
-                    <p class="whiter">Delicious pizza's, topped with gooey cheese, savory sauce, and your favorite toppings. Pure satisfaction in every bite!</p>
-                </div>
-                <div class="box">
-                    <!-- https://source.unsplash.com/random/?Cake/1080x675 -->
-                    <!-- /img/cake.jpg -->
-                    <a href="#"><img id="imagec" alt="Cake" src="img/cake.jpg"></a>
-                    <a href="#"><h2 class="h-secondary center whiter">CAKES</h2></a>
+    
+    <section class="services-container">
+        <div id="services">
+            <div class="box">
+                <!-- https://source.unsplash.com/random/?Pizza/1080x675" -->
+                <!-- img/pizza.jpg -->
+                <a href="login-main/login.php"><img id="imagep" alt="Pizza" src="img/pizza.jpg"></a>
+                <a href="login-main/login.php"><h2 class="h-secondary center whiter">PIZZA</h2></a>
+                <p class="whiter">Delicious pizza's, topped with gooey cheese, savory sauce, and your favorite toppings. Pure satisfaction in every bite!</p>
+            </div>
+            <div class="box">
+                <!-- https://source.unsplash.com/random/?Cake/1080x675 -->
+                <!-- img/cake.jpg -->
+                <a href="login-main/login.php"><img id="imagec" alt="Cake" src="img/cake.jpg"></a>
+                    <a href="login-main/login.php"><h2 class="h-secondary center whiter">CAKES</h2></a>
                     <p class="whiter">Cakes are delightful treats enjoyed worldwide. They come in various flavors, sizes, and designs, pleasing every palate. Indulge now!</p>
                 </div>
                 <div class="box">
                     <!-- https://source.unsplash.com/random/?Burger/1080x675 -->
-                    <!-- /img/burger.jpg -->
-                        <a href="#"><img id="imageb" alt="Burger" src="img/burger.jpg"></a>
-                        <a href="#"><h2 class="h-secondary center whiter">BURGER</h2></a>
-                        <p class="whiter">Burgers are delicious fast food items loved globally for their juicy patties, tasty toppings, and satisfying buns.</p>
+                    <!-- img/burger.jpg -->
+                    <a href="login-main/login.php"><img id="imageb" alt="Burger" src="img/cake.jpg"></a>
+                    <a href="login-main/login.php"><h2 class="h-secondary center whiter">BURGER</h2></a>
+                    <p class="whiter">Burgers are delicious fast food items loved globally for their juicy patties, tasty toppings, and satisfying buns.</p>
                 </div>
                 
             </div>
         </section>
 
+        
+        <!-- <section class="signin">
+            
+            <div class="popup" id="zoomimg">
+                <iframe src="login-main/login.php" frameborder="0"></iframe> -->
+                <!-- <img id="cimg" src="img/login.jpg" alt="img"> -->
+                <!-- <span id="close" onclick="back()">&times;</span>
+            </div>
+            
+            
+            
+            
+        </section> -->
 
-
-<section class="signin">
-    
-    <div class="popup" id="zoomimg">
-        <iframe src="login-main/login.html" frameborder="0"></iframe>
-        <!-- <img id="cimg" src="img/login.jpg" alt="img"> -->
-        <span id="close" onclick="back()">&times;</span>
-    </div>
-
-
-
-    
-</section>
-
-
-
+        
+        
         <section class="partners">
             <div class="order-form">
                 <form name="oform" action="#" method="post">
@@ -128,11 +132,16 @@
 </body>
 
 <script type="text/javascript">
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load",function(){
+    loader.style.display = "none";
+})
+</script>
+
+<!-- <script type="text/javascript">
                     
     document.querySelectorAll('#services .box').forEach(image =>{
         image.onclick = () =>{
-            document.querySelector('.popup').style.display = "block";
-            document.querySelector('.popup img').src = image.getAttribute('src');
         }
     });    
     
@@ -142,5 +151,5 @@
             ab.style.display = "none";
         }
 
-</script>
+</script> -->
 </html>

@@ -34,27 +34,27 @@ closeShopping.addEventListener('click', ()=>{
 let products = [
     {
         id: 1,
-        name: 'PRODUCT NAME 1',
+        name: 'Masala Dosa',
         image: '1.PNG',
-        price: 120000
+        price: 60
     },
     {
         id: 2,
-        name: 'PRODUCT NAME 2',
+        name: 'Uttapam',
         image: '2.PNG',
-        price: 120000
+        price: 80
     },
     {
         id: 3,
-        name: 'PRODUCT NAME 3',
+        name: 'Idli',
         image: '3.PNG',
-        price: 220000
+        price: 40
     },
     {
         id: 4,
-        name: 'PRODUCT NAME 4',
+        name: 'Vada',
         image: '4.PNG',
-        price: 123000
+        price: 20
     },
     {
         id: 5,
@@ -100,6 +100,8 @@ function initApp(){
         list.appendChild(newDiv);
     })
 }
+
+
 initApp();
 function addToCard(key){
     if(listCards[key] == null){
@@ -119,22 +121,31 @@ function reloadCard(){
         if(value != null){
             let newDiv = document.createElement('li');
             newDiv.innerHTML = `
-                <div><img src="image/${value.image}"/></div>
-                <div>${value.name}</div>
-                <div>${value.price.toLocaleString()}</div>
+            <div class="image-container"><img src="image/${value.image}"/></div>
+                <div class="cart-items">${value.name}</div>
+                <div class="cart-items">${value.price.toLocaleString()}</div>
                 <div>
-                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
-                    <div class="count">${value.quantity}</div>
+                <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <div class="count cart-items">${value.quantity}</div>
                     <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
-                </div>`;
+                    </div>`;
                 listCard.appendChild(newDiv);
         }
+
+    
+
+
     })
     quantity.innerText = count;
     total.innerText = totalPrice.toLocaleString();
     return total;
     
 }
+
+
+
+
+
 function changeQuantity(key, quantity){
     if(quantity == 0){
         delete listCards[key];
@@ -146,6 +157,45 @@ function changeQuantity(key, quantity){
 }
 
 function redirecto(){
+
+
+    const imageContainers = document.querySelectorAll(".image-container")
+
+    const imageSources = [];
+
+    imageContainers.forEach(function(container){
+        const image = container.querySelector("img");
+        const imageSrc = image.getAttribute("src");
+        imageSources.push(imageSrc);
+
+    });
+
+    localStorage.setItem("imageSources",JSON.stringify(imageSources));
+
+
+
+
+    const cartitemdivs = document.querySelectorAll(".cart-items");
+    const cartitemtext = Array.from(cartitemdivs).map(div => div.textContent.trim());
+
+    // const encodedcartitem = encodeURIComponent(JSON.stringify(cartitemtext));
+
+    localStorage.setItem("cartdetail",JSON.stringify(cartitemtext));
+
+
+
+
     var total = document.getElementById("tbox").textContent;
-    window.location.href = "../../checkout.php?total=" + encodeURIComponent(total);
+    let isOrderConfirm = confirm(`Proceed To Checkout For Rs.${total}`);
+    if(total>0){
+        if(isOrderConfirm){
+            window.location.href = "checkout.php?total=" + encodeURIComponent(total);
+        }
+    }else{
+        alert("Please Select Atleast 1 Item.");
+    }
+
+
+
+
 }

@@ -147,5 +147,5 @@ function changeQuantity(key, quantity){
 
 function redirecto(){
     var total = document.getElementById("tbox").textContent;
-    window.location.href = "../../checkout.php?total=" + encodeURIComponent(total);
+    window.location.href = "checkout.php?total=" + encodeURIComponent(total);
 }

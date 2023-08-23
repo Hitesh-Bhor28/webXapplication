@@ -1,6 +1,7 @@
 body{
     background-color: #E3E7E8;
     font-family: system-ui;
+    overflow-x: hidden;
 }
 .container{
     height: 200vh;
@@ -11,15 +12,21 @@ body{
 header{
     display: grid;
     grid-template-columns: 1fr 50px;
-    margin-top: 50px;
+  
 }
+
+
+
 header .shopping{
     position: relative;
     text-align: right;
-    top: -105px;
-    left: 96px;
+    left: 450%;
+    
+  
+    
 }
 header .shopping img{
+    cursor: pointer;
     width: 40px;
     filter: invert(1);
 }
@@ -49,6 +56,16 @@ header .shopping span{
     padding: 20px;
     box-shadow: 0 50px 50px #757676;
     letter-spacing: 1px;
+    transition: all 0.1s;
+}
+.list .item:hover{
+    text-align: center;
+    height: 30vh;
+    background-color: #DCE0E1;
+    padding: 16px;
+    box-shadow: 0 50px 50px #757676;
+    letter-spacing: 1px;
+    cursor: pointer;
 }
 .list .item img{
     width: 90%;
@@ -66,13 +83,23 @@ header .shopping span{
     width: 100%;
     padding: 10px;
 }
+.list .item button:hover{
+    background-color: #813b3b;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
 .card{
+    height: 735px;
+    overflow: hidden;
+    overflow-y: scroll;
     position: fixed;
     top:0;
     left: 100%;
     width: 500px;
     background-color: #453E3B;
-    height: 100vh;
+   
     transition: 0.5s;
 }
 .active .card{
@@ -84,34 +111,83 @@ header .shopping span{
 .card h1{
     color: #E8BC0E;
     font-weight: 100;
-    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 86px;
     padding: 0 20px;
     height: 80px;
     display: flex;
+    visibility: hidden;
     align-items: center;
 }
+
+
+.card h3{
+    color: #E8BC0E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    margin-top: -5px;
+    padding: 4px 0px;
+    top: 90px;
+    border-bottom: 1px solid #e2e6e7;
+    display: block;
+    text-align: center;
+    
+}
+
+.card h4{
+   
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: absolute;
+    color: #ffffff;
+    z-index: 1;
+    top: 135px;
+    display: flex;
+    left: 25px;
+}
+
+
+
 .card .checkOut{
     position: absolute;
-    bottom: 0;
+    left: 0px;
+    bottom: 565px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
 }
 .card .checkOut div{
-    background-color: #E8BC0E;
+    background-color: black;
     width: 100%;
-    height: 70px;
+    height: 55px;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    
     cursor: pointer;
+    
 }
+
+
 .card .checkOut div:nth-child(2){
     background-color: #1C1F25;
     color: #fff;
+    border-left: 2px solid white;
 }
+
+.card .checkOut #tbox:hover{
+    color: #E8BC0E;
+    background-color: black;
+}
+
+.card .checkOut #lbox:hover{
+    background-color: #E8BC0E;
+    color: black;
+}
+
+
 .listCard li{
     display: grid;
     grid-template-columns: 100px repeat(3, 1fr);
@@ -127,8 +203,12 @@ header .shopping span{
     width: 90%;
 }
 .listCard li button{
-    background-color: #fff5;
-    border: none;
+    background-color: #453e3b;
+    border: 2px solid red;
+    padding: 1px 14px;
+    font-size: 20px;
+    color: white;
+    border-radius: 11px;
 }
 .listCard .count{
     margin: 0 10px;

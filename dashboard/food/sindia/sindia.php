@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/asider.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/asider.css">
 </head>
 <body class="">
 
 <div class="navbar">
     <nav id="navbar">
             <div id="logo">
-                <img src="../img/logoBG.png" alt="logo.png" srcset="">
+                <img src="../../image/logoBG.png" alt="logo.png" srcset="">
             </div>
             
             <ul>
@@ -38,7 +38,7 @@
                             <div class="dropdown-content">
                                 <a href="#">Profile</a>
                                 <a href="#">Settings</a>
-                                <a href="logout.php">Logout</a>
+                                <a href="../../logout.php">Logout</a>
                             </div>
                     </div>
                 </li>
@@ -92,34 +92,34 @@
 
             <div class="right-menu">
                 <div class="menu-first">
-                    <a href="food/biryani/biryani.php"><img id="img-dish-biryani" alt="Pizza" src="food/biryani/image/biryani1.png"></a>
+                    <a href="../biryani/biryani.php"><img id="img-dish-biryani" alt="biryani" src="../biryani/image/biryani1.png"></a>
                 </div>
-                <a href="food/biryani/biryani.php" id="biryani"><h5>Biryani</h5></a>
+                <a href="../biryani/biryani.php" id="biryani"><h5>Biryani</h5></a>
 
                 <div class="menu-first">
-                    <a href="food/chicken/chicken.php"><img id="img-dish-chicken" alt="Pizza" src="food/chicken/image/chicken.png"></a>
+                    <a href="../chicken/chicken.php"><img id="img-dish-chicken" alt="chicken" src="../chicken/image/chicken.png"></a>
                 </div>
-                <a href="food/chicken/chicken.php"><h5 id="chicken">Chicken</h5></a>
+                <a href="../chicken/chicken.php"><h5 id="chicken">Chicken</h5></a>
                 
                 <div class="menu-first">
-                    <a href="food/paneer/paneer.php"><img id="img-dish-paneer" alt="Pizza" src="food/paneer/image/paneer.png"></a>
+                    <a href="../paneer/paneer.php"><img id="img-dish-paneer" alt="Pizza" src="../paneer/image/paneer.png"></a>
                 </div>
-                <a href="food/paneer/paneer.php"><h5 id="panner">Paneer</h5></a>
+                <a href="../paneer/paneer.php"><h5 id="panner">Paneer</h5></a>
                 
                 <div class="menu-first">
-                <a href="food/vegi/vegi.php"><img id="img-dish-vegi" alt="Pizza" src="food/vegi/image/vegi.png"></a>
+                <a href="../vegi/vegi.php"><img id="img-dish-vegi" alt="Pizza" src="../vegi/image/vegi.png"></a>
                 </div>
-                <a href="food/vegi/vegi.php"><h5 id="vegi">Vegetable</h5></a>
+                <a href="../vegi/vegi.php"><h5 id="vegi">Vegetable</h5></a>
                 
                 <div class="menu-first">
-                    <a href="food/chinese/chinese.php"><img id="img-dish-chinese" alt="Pizza" src="food/chinese/image/chinese.png"></a>
+                    <a href="../chinese/chinese.php"><img id="img-dish-chinese" alt="Pizza" src="../chinese/image/chinese.png"></a>
                 </div>
-                <a href="food/chinese/chinese.php"><h5 id="chinese">Chinese</h5></a>
+                <a href="../chinese/chinese.php"><h5 id="chinese">Chinese</h5></a>
                
                 <div class="menu-first">
-                    <a href="food/sindia/sindia.php"><img id="img-dish-sindia" alt="Pizza" src="food/sindia/image/sindia.png"></a>
+                    <a href="../sindia/sindia.php"><img id="img-dish-sindia" alt="Pizza" src="../sindia/image/sindia.png"></a>
                 </div>
-                <a href="food/sindia/sindia.php"><h5 id="sindia">South-Indian</h5></a>
+                <a href="../sindia/sindia.php"><h5 id="sindia">South-Indian</h5></a>
             
             </div>
            
@@ -127,7 +127,9 @@
     </div>
 </div>
 
-
+<div>
+    <button onclick="alldata()">click me</button>
+</div>
 
 
 
@@ -139,5 +141,5 @@
 
 
 </body>
-<script src="js/app1.js"></script>
+<script src="sindia.js"></script>
 </html>

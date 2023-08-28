@@ -34,52 +34,23 @@ closeShopping.addEventListener('click', ()=>{
 let products = [
     {
         id: 1,
-        name: 'Masala Dosa',
-        image: 'MasalaDosa.PNG',
+        name: 'Chicken Biryani',
+        image: 'Chickenbiryani.PNG',
         price: 60
     },
     {
         id: 2,
-        name: 'Uttapam',
-        image: 'Uttapam.PNG',
+        name: 'Mutton Biryani',
+        image: 'Muttonbiryani.PNG',
         price: 80
     },
     {
         id: 3,
-        name: 'Idli',
-        image: 'Idli.PNG',
+        name: 'Raita',
+        image: 'Raita.PNG',
         price: 40
     },
-    {
-        id: 4,
-        name: 'Vada',
-        image: 'Vada.PNG',
-        price: 20
-    },
-    {
-        id: 5,
-        name: 'Sambar',
-        image: 'Sambar.PNG',
-        price: 35
-    },
-    {
-        id: 6,
-        name: 'Appam',
-        image: 'Appam.PNG',
-        price: 75
-    },
-    {
-        id: 7,
-        name: 'Rasam',
-        image: 'Rasam.PNG',
-        price: 50
-    },
-    {
-        id: 8,
-        name: 'Coconut',
-        image: 'Coconut.PNG',
-        price: 15
-    },
+    
     
 ];
 let listCards  = [];
@@ -182,10 +153,8 @@ function redirecto(){
 
     var total = document.getElementById("tbox").textContent;
     let isOrderConfirm = confirm(`Proceed To Checkout For Rs.${total}`);
-    
     if(total>0){
         if(isOrderConfirm){
-            localStorage.setItem("totalPrice",JSON.stringify(total));
             window.location.href = "checkout.php?total=" + encodeURIComponent(total);
         }
     }else{

@@ -43,50 +43,77 @@ $conn->close();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="css/pay.css">
 </head>
 <body>
 
+<div class="container">
+    <div class="tick">
+        <p class=txt>ADDRESS</p>
+        <img src="tick.png" alt="tick" srcset="">
+    </div>
+        <div class="vertical-line"></div>
+            <div class="payment">
+                <div class="txt2">
+                    <p>PAYMENT</p>
+                </div>
+                
+                <div class="txt3">
+                    <table style="
+    margin: 30px -150px;
+    margin-top: -156px;
+">
+                        <tr>
+                            <th>Payment Method</th>
+                            <th>Success</th>
+                            <th>Failure</th>
+                            <th>Details</th>
+                            
+                        </tr>
+                        <tr>
+                            <td>UPI</td>
+                            <td>success@razorpay</td>
+                            <td>failure@razorpay</td>
+                            <td></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Card</td>
+                            <td>5267 3181 8797 5449</td>
+                            <td></td>
+                            <td>Any Cvv & Expiry Date</td>
+                            
+                        </tr>
+                    </table>
+                </div>
 
+                <div class="razor" style="
+    margin-left: 10px;
+">
+                    <form action="razorpay/razor.php" method="post"  target="_top" id="myForm">
+                        <input type="hidden" name="payprice" id="payprice">
+                        <input type="submit" value="Continue">
+                    </form>
+                </div>
+        </div>
+</div>    
+    
+<script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
 
-
-
-
-
-<div class="pay">
-<!-- after address tick -->
-<?php
-
-    $apikey = "rzp_test_rGijuZptM4bTSD";
-
-
-?>
-
-<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
-<form action="" method="post">
-<script 
-    src="https://checkout.razorpay.com/v1/checkout.js"
-    data-key="<?php echo $apikey; ?>"
-    data-amount="3000"
-    data-currency="INR"
-    data-id="<?php echo 'OID'.rand(10,100).'END';?>"
-    data-buttontext="Pay with Razorpay"
-    data-name="DelightfulDishes"
-    data-description="A discrip of this page"
-    data-image="https://emample.com"
-    data-prefill.name="<?php echo $name; ?>"
-    data-prefill.email=""
-    data-theme.color="#F37254"
-></script>
-<input type="hidden" custom="Hidden Element" name="hidden">
-</form>
-
-</div>
-
-
+            var LSprice = localStorage.getItem("totalPrice");
+            var dynamicValue = JSON.parse(LSprice);
+            var inputField = document.getElementById("payprice");
+            if (inputField) {
+                inputField.value = dynamicValue;
+            }
+            document.getElementById("myForm").submit();
+            
+        });
+        
+        
+</script>
 
 </body>
 </html>

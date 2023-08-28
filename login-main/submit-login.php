@@ -13,13 +13,13 @@ $row = mysqli_fetch_assoc($result);
                 $flags = TRUE;
                 
                 if(is_array($row)){
-                    $_SESSION["id"] = $row["id"];
-                    $_SESSION["username"] = $row ['name'];
-                    $_SESSION["email"] = $row ['email'];
+                    $_SESSION['id'] = $row['id'];
+                    $_SESSION['username'] = $row ['name'];
+                    $_SESSION['email'] = $row ['email'];
                 }
                 
-                if(isset($_SESSION["username"])){
-                    if(isset($_SESSION["email"])){
+                if(isset($_SESSION['username'])){
+                    if(isset($_SESSION['email'])){
                         header("location:../dashboard/dashboard.php");
                     }
                 }

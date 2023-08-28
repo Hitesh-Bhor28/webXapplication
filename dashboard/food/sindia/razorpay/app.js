@@ -34,53 +34,58 @@ closeShopping.addEventListener('click', ()=>{
 let products = [
     {
         id: 1,
-        name: 'Masala Dosa',
-        image: 'MasalaDosa.PNG',
-        price: 60
+        name: 'PRODUCT NAME 1',
+        image: '1.PNG',
+        price: 120000
     },
     {
         id: 2,
-        name: 'Uttapam',
-        image: 'Uttapam.PNG',
-        price: 80
+        name: 'PRODUCT NAME 2',
+        image: '2.PNG',
+        price: 120000
     },
     {
         id: 3,
-        name: 'Idli',
-        image: 'Idli.PNG',
-        price: 40
+        name: 'PRODUCT NAME 3',
+        image: '3.PNG',
+        price: 220000
     },
     {
         id: 4,
-        name: 'Vada',
-        image: 'Vada.PNG',
-        price: 20
+        name: 'PRODUCT NAME 4',
+        image: '4.PNG',
+        price: 123000
     },
     {
         id: 5,
-        name: 'Sambar',
-        image: 'Sambar.PNG',
-        price: 35
+        name: 'PRODUCT NAME 5',
+        image: '5.PNG',
+        price: 320000
     },
     {
         id: 6,
-        name: 'Appam',
-        image: 'Appam.PNG',
-        price: 75
+        name: 'PRODUCT NAME 6',
+        image: '6.PNG',
+        price: 120000
     },
     {
         id: 7,
-        name: 'Rasam',
-        image: 'Rasam.PNG',
-        price: 50
+        name: 'PRODUCT NAME 6',
+        image: '6.PNG',
+        price: 120000
     },
     {
-        id: 8,
-        name: 'Coconut',
-        image: 'Coconut.PNG',
-        price: 15
+        id: 7,
+        name: 'PRODUCT NAME 6',
+        image: '6.PNG',
+        price: 120000
     },
-    
+    {
+        id: 7,
+        name: 'PRODUCT NAME 6',
+        image: '6.PNG',
+        price: 120000
+    }
 ];
 let listCards  = [];
 function initApp(){
@@ -95,8 +100,6 @@ function initApp(){
         list.appendChild(newDiv);
     })
 }
-
-
 initApp();
 function addToCard(key){
     if(listCards[key] == null){
@@ -116,31 +119,22 @@ function reloadCard(){
         if(value != null){
             let newDiv = document.createElement('li');
             newDiv.innerHTML = `
-            <div class="image-container"><img src="image/${value.image}"/></div>
-                <div class="cart-items">${value.name}</div>
-                <div class="cart-items">${value.price.toLocaleString()}</div>
+                <div><img src="image/${value.image}"/></div>
+                <div>${value.name}</div>
+                <div>${value.price.toLocaleString()}</div>
                 <div>
-                <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
-                    <div class="count cart-items">${value.quantity}</div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <div class="count">${value.quantity}</div>
                     <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
-                    </div>`;
+                </div>`;
                 listCard.appendChild(newDiv);
         }
-
-    
-
-
     })
     quantity.innerText = count;
     total.innerText = totalPrice.toLocaleString();
     return total;
     
 }
-
-
-
-
-
 function changeQuantity(key, quantity){
     if(quantity == 0){
         delete listCards[key];
@@ -152,47 +146,6 @@ function changeQuantity(key, quantity){
 }
 
 function redirecto(){
-
-
-    const imageContainers = document.querySelectorAll(".image-container")
-
-    const imageSources = [];
-
-    imageContainers.forEach(function(container){
-        const image = container.querySelector("img");
-        const imageSrc = image.getAttribute("src");
-        imageSources.push(imageSrc);
-
-    });
-
-    localStorage.setItem("imageSources",JSON.stringify(imageSources));
-
-
-
-
-    const cartitemdivs = document.querySelectorAll(".cart-items");
-    const cartitemtext = Array.from(cartitemdivs).map(div => div.textContent.trim());
-
-    // const encodedcartitem = encodeURIComponent(JSON.stringify(cartitemtext));
-
-    localStorage.setItem("cartdetail",JSON.stringify(cartitemtext));
-
-
-
-
     var total = document.getElementById("tbox").textContent;
-    let isOrderConfirm = confirm(`Proceed To Checkout For Rs.${total}`);
-    
-    if(total>0){
-        if(isOrderConfirm){
-            localStorage.setItem("totalPrice",JSON.stringify(total));
-            window.location.href = "checkout.php?total=" + encodeURIComponent(total);
-        }
-    }else{
-        alert("Please Select Atleast 1 Item.");
-    }
-
-
-
-
+    window.location.href = "../../checkout.php?total=" + encodeURIComponent(total);
 }

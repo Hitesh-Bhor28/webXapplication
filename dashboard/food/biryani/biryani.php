@@ -127,7 +127,9 @@
     </div>
 </div>
 
-
+<div>
+    <button onclick="alldata()">click me</button>
+</div>
 
 
 
@@ -139,5 +141,5 @@
 
 
 </body>
-<script src="../../js/app.js"></script>
+<script src="sindia.js"></script>
 </html>

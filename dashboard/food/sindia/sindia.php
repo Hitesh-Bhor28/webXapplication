@@ -76,7 +76,7 @@
             <ul>
                 <li class="nav-text-left"><a href="#">Home</a></li>
                 <li class="nav-text-left"><a href="#">Wishlist</a></li>
-                <li class="nav-text-left"><a href="#">Your Orders</a></li>
+                <li class="nav-text-left"><a href="../../Orders/">Your Orders</a></li>
                 <li class="nav-text-left"><a href="#">Help</a></li>
             </ul>
         </div>

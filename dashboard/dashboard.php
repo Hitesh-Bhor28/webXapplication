@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
+    $username = $_SESSION['username'];
+    $userId = $_SESSION['id'];
+
+    // echo "Welcome, $username (User ID: $userId)";
+} else {
+    echo "Session data not found.";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,11 +90,12 @@
             <ul>
                 <li class="nav-text-left"><a href="#">Home</a></li>
                 <li class="nav-text-left"><a href="#">Wishlist</a></li>
-                <li class="nav-text-left"><a href="#">Your Orders</a></li>
+                <li class="nav-text-left"><a href="Orders/">Your Orders</a></li>
                 <li class="nav-text-left"><a href="#">Help</a></li>
             </ul>
         </div>
 </div>
+
 
 
 <div class="aside-right">
@@ -92,6 +107,11 @@
 
             <div class="right-menu">
                 <div class="menu-first">
+                    <a href="food/paneer/paneer.php"><img id="img-dish-paneer" alt="Pizza" src="food/paneer/image/paneer.png"></a>
+                </div>
+                <a href="food/paneer/paneer.php"><h5 id="panner">Paneer</h5></a>
+
+                <div class="menu-first">
                     <a href="food/biryani/biryani.php"><img id="img-dish-biryani" alt="Pizza" src="food/biryani/image/biryani1.png"></a>
                 </div>
                 <a href="food/biryani/biryani.php" id="biryani"><h5>Biryani</h5></a>
@@ -100,11 +120,6 @@
                     <a href="food/chicken/chicken.php"><img id="img-dish-chicken" alt="Pizza" src="food/chicken/image/chicken.png"></a>
                 </div>
                 <a href="food/chicken/chicken.php"><h5 id="chicken">Chicken</h5></a>
-                
-                <div class="menu-first">
-                    <a href="food/paneer/paneer.php"><img id="img-dish-paneer" alt="Pizza" src="food/paneer/image/paneer.png"></a>
-                </div>
-                <a href="food/paneer/paneer.php"><h5 id="panner">Paneer</h5></a>
                 
                 <div class="menu-first">
                 <a href="food/vegi/vegi.php"><img id="img-dish-vegi" alt="Pizza" src="food/vegi/image/vegi.png"></a>
@@ -139,5 +154,5 @@
 
 
 </body>
-<script src="js/app1.js"></script>
+<script src="js/app.js"></script>
 </html>

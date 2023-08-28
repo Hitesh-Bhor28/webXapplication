@@ -14,7 +14,7 @@
     <p>Please enter your shipping details.</p>
     <hr />
     <div class="form">
-<form action="address-saver.php" id="myForm" method="POST">
+<form action="address-saver.php" id="myForm" method="POST" target="_top">
     <div class="fields fields--2">
       <label class="field">
         <span class="field__label" for="firstname">First name</span>
